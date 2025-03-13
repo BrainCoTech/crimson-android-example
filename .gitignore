@@ -15,3 +15,5 @@ crimsonjna/src/main/jniLibs
 
 # AAR dist
 dist/
+example/.project
+example/.idea/gradle.xml

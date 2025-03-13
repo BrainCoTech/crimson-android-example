@@ -154,7 +154,7 @@ public class DeviceActivity extends BaseActivity {
     private class DeviceListener extends CrimsonDeviceListener {
         @Override
         public void onDeviceInfoReady(DeviceInfo info) {
-            Log.d(TAG, "info=" + info);
+            Log.i(TAG, "onDeviceInfoReady, info: " + info);
         }
 
         @SuppressLint("SetTextI18n")
@@ -220,18 +220,16 @@ public class DeviceActivity extends BaseActivity {
 
         @Override
         public void onOrientationChange(int orientation) {
-            Log.d(TAG, "orientation=" + orientation);
+           Log.d(TAG, "orientation=" + orientation);
         }
 
         @Override
         public void onRawEEGData(EEG data) {
-            /*
             eegMetaDataText.setText(String.format(Locale.getDefault(), "SN:%d SR:%.1f",
                     data.getSequenceNumber(),
                     data.getSampleRate()));
 
             eegDataText.setText(Arrays.toString(data.getEEGData()));
-            */
         }
 
         @Override
@@ -317,6 +315,7 @@ public class DeviceActivity extends BaseActivity {
     }
 
     private void startEEG() {
+        //device.setAttentionModel(0);
         device.startEEGStream(error -> {
             if (error != null) {
                 Log.i(TAG, "startEEGStream:" + error.getCode() + ", message=" + error.getMessage());
@@ -328,6 +327,7 @@ public class DeviceActivity extends BaseActivity {
                 startIMU();
             }
         });
+        //getSysInfo();
     }
 
     private void getSysInfo() {

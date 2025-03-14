@@ -17,3 +17,4 @@ crimsonjna/src/main/jniLibs
 dist/
 example/.project
 example/.idea/gradle.xml
+/.idea/runConfigurations.xml

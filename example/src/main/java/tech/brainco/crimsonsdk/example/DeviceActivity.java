@@ -264,11 +264,13 @@ public class DeviceActivity extends BaseActivity {
 
         @Override
         public void onAttention(float attention) {
+            Log.d(TAG, "attention=" + attention);
             deviceAttentionText.setText(String.valueOf(attention));
         }
 
         @Override
         public void onMeditation(float meditation) {
+            Log.d(TAG, "meditation=" + meditation);
             deviceMeditationText.setText(String.valueOf(meditation));
         }
     }
